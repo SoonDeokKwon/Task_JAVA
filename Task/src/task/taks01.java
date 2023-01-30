@@ -97,7 +97,8 @@ public class taks01 {
 		    힌트) 곱하기 연산자 (*), 나누기 연산자( / ) 와 빼기 연산자 ( - ) 를 이용하세요. */
 		int value = 485;
 		
-		int result6 = (value - 8*10 - 5)/100 + (value - 4*100 - 5)/10 + (value - 4*100 - 8*10) ;
+//		int result6 = (value - 8*10 - 5)/100 + (value - 4*100 - 5)/10 + (value - 4*100 - 8*10) ;
+		int result6 = (value/100) + (value-100*(value/100))/10 + value-value/100*100-((value-100*(value/100))/10)*10;
 		
 		System.out.println(result6);		
 		
