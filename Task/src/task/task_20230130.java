@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class task_20230130 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner scanner = new Scanner(System.in);
 
 		// 문제1) 차례대로 x와 y의 값이 주어졌을 때 어느 사분면에 해당되는지 출력하도록 구현하세요.
@@ -16,8 +16,9 @@ public class task_20230130 {
 		// 제4사분면 : x>0, y<0
 		// 문제출처, 백준(https://www.acmicpc.net/) 14681번 문제
 		
-		System.out.println("숫자 2개를 입력하세요>");
+		System.out.println("x값(숫자)을 입력하세요>");
 		int x = Integer.parseInt(scanner.nextLine());
+		System.out.println("y(숫자)값을 입력하세요>");
 		int y = Integer.parseInt(scanner.nextLine());
 		
 		if(x>0 && y>0) {
@@ -31,7 +32,6 @@ public class task_20230130 {
 		}
 		
 		
-
 		// 문제2) 연도가 주어졌을 때 해당 년도가 윤년인지를 확인해서 출력하도록 하세요.
 		// 윤년은 연도가 4의 배수이면서 100의 배수가 아닐 때 또는 400의 배수일때입니다.
 		// 예를 들어, 2012년은 4의 배수이면서 100의 배수가 아니라서 윤년이며,
@@ -39,17 +39,62 @@ public class task_20230130 {
 		// HiNT : 이중 IF문 사용
 		// 문제출처, 백준(https://www.acmicpc.net/) 2753번 문제
 		
+		System.out.println("연도를 입력하세요(숫자)>");
+		int year = Integer.parseInt(scanner.nextLine());
+		
+		if(year % 4 == 0 && year % 100 != 0) {
+			System.out.println(year + "년 : 윤년입니다.");
+			if(year % 400 == 0)  {
+				System.out.println(year + "년 : 윤년입니다.");
+			}
+		}else {
+			System.out.println(year + "년 : 윤년이 아닙니다.");
+		}
+//		
+		
+		
 		// 문제3) switch문을 이용하여 가위, 바위, 보 중 하나가 주어졌을 때 사용자 어떤 값을 가져야 이길 수 있는 지를 출력하도록
 		// 구현하세요.
 		// 예를 들어, 가위가 주어졌을 때 "이기기 위해선 바위를 내야합니다." 라고 출력하도록 하세요.
 		// 한 단어를 입력받을 경우 Scanner객체의 next() 함수를 사용하면 됩니다.
 
+		System.out.println("가위,바위,보 중 무엇을 낼 지 입력하세요>");
+		String select = scanner.nextLine();
+		
+		switch(select) {
+		case "가위":
+			System.out.println("이기기 위해서는 바위를 내야 합니다.");
+			break;
+		case "바위":
+			System.out.println("이기기 위해서는 보를 내햐 합니다.");
+			break;
+		case "보":
+			System.out.println("이기기 위해서는 가위를 내야 합니다.");
+			break;
+		}
+		
+		
+		
+		
 		// 문제4) 차례대로 m과 n을 입력받아 m단을 n번째까지 출력하도록 하세요.
 		// 예를 들어 2와 3을 입력받았을 경우 아래처럼 출력합니다.
 		// 2 X 1 = 2
 		// 2 X 2 = 4
 		// 2 X 3 = 6
 
+		System.out.println("m값을 입력하세요>");
+		int m = Integer.parseInt(scanner.nextLine());
+		System.out.println("n값을 입력하세요>");
+		int n = Integer.parseInt(scanner.nextLine());
+		
+		for(int i=1; i<=m; i++) {
+			for(int j=1; j<=n; j++) {
+				System.out.println(i + " X " + j + " = " + i*j);
+			}
+		}
+		
+		
+		//
 		//문제5) 호수에서 살고 있는 얼음요정이 곱셈을 공부하기로 했다. 근데 이 요정은 너무 멍청해서 9라는 숫자 이외에는 헷갈려서 잘 쓰지 못한다고 한다. 그래서 사람과는 곱셈방식이 좀 다르다.
 		//(규칙 1)
 
@@ -80,6 +125,38 @@ public class task_20230130 {
 		//1*7=9	 2*7=9	 3*7=9 	4*7=9 	5*7=9 	6*7=9 	7*7=49 	8*7=9 	9*7=63 
 		//1*8=9	 2*8=9	 3*8=9 	4*8=9 	5*8=9 	6*8=9 	7*8=9 	8*8=9 	9*8=72 
 		//1*9=9	 2*9=18	 3*9=27 4*9=36 	5*9=45 	6*9=54 	7*9=63 	8*9=72 	9*9=81
+		
+		System.out.println("n값을 입력하세요.>");
+		int input = Integer.parseInt(scanner.nextLine());
+		
+
+			for(int i=1; i<=input; i++) {	
+				for(int j=1; j<=input; j++) {
+					int result = i*j;
+					boolean flag = true;
+					while(flag) {
+						if(result % 10 == 9) {
+							result  = 9;
+							flag  = false;
+						} else if (result >= 10) {
+							result /= 10;
+						} else if( result < 10) {
+							flag = false;
+						}
+					}
+					if(i % 10 ==9 || j % 10 == 9 || result == 9) {
+						result = i*j;
+					System.out.print(j + "*" + i + "=" + result + "\t");
+					} else {
+						result = 9;
+						System.out.print(j + "*" + i + "=" + result + "\t");
+					}
+				}
+				System.out.println();
+			}
+			
+
+
 		
 	}
 

@@ -1,4 +1,4 @@
-package com.yedom;
+package task;
 
 import java.util.Scanner;
 
@@ -135,7 +135,7 @@ public class homework_230130 {
 					int result = i*j;
 					boolean flag = true;
 					while(flag) {
-						if(result % 10 == 9) {
+						if(result % 10 == 9 ) {
 							result  = 9;
 							flag  = false;
 						} else if (result >= 10) {
@@ -154,6 +154,15 @@ public class homework_230130 {
 				}
 				System.out.println();
 			}
+			
+			
+			
+			//각 자리수에 9가 포함되어 있는지 확인.
+			//자리수가 한자리 -> i == 9
+			//두 자리수.....
+			//33 -> 1.33/10 = 9 포함, 33%10 = 9 포함
+			//포함이 되어있지 않다, 겨롸 9로 나와야한다
+			
 			
 
 
