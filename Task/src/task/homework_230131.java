@@ -80,12 +80,22 @@ public class homework_230131 {
 				int[] counter = new int[4];
 		
 				for (int i = 0; i < answer.length; i++) {
-					int index = 0;
+					//answer의 숫자의 갯수 -> counter 인덱스와 매칭
+					//answer엣 데이터(값)이 나왔을 때
+					//-> counter의 인덱스로 바꾼다.
+					//answer -> 1
+					//conuter[0]= counter[0] + 1;
+					//answer -> 4
+					//counter[3] = counter[3] + 1;
 					
+					counter[answer[i]-1]++;
+					//counter[answer[i]-1] += 1;
 				
 				}
 				for (int i = 0; i < counter.length; i++) {
-					/* 해당 부분 코딩 */
+					for(int j = 0; j < counter[i]; j++) {
+						System.out.println("*");
+					}
 		
 					System.out.println();
 				}
