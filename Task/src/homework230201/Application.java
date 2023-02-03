@@ -29,7 +29,7 @@ public class Application {
 				
 				// 1.상품 수 | 2.상품 및 가격입력 | 3.제품별 가격 | 4.분석 | 5.종료
 				while (true) {
-					System.out.println("1.상품 수 | 2.상품 및 가격입력 | 3.제품별 가격 | 4.분석 | 5.종료");
+					System.out.println("===1.상품 수 | 2.상품 및 가격입력 | 3.제품별 가격 | 4.분석 | 5.종료===");
 					System.out.println("입력> ");
 					
 					int selectNo = Integer.parseInt(sc.nextLine());
@@ -74,11 +74,15 @@ public class Application {
 							sumPrice += pductArr[i].price;
 						}
 						System.out.println("최고 가격 제품 : " + maxProduct);
-						System.out.println("최고 가격 제품을 제외한 제품들의 가격 총합 : " + sumPrice + "원");
+						System.out.println("최고 가격 제품을 제외한 제품들의 가격 총합 : " + (sumPrice - maxPrice) + "원");
 						
 					// 5) 종료 시에는 프로그램을 종료한다고 메세지를 출력하도록 구현하세요.	
 					} else if(selectNo == 5) {
 						System.out.println("프로그램을 종료합니다.");
+						break;
+					}else {
+						System.out.println("없는 메뉴를 선택하였습니다.");
+						System.out.println("맞는 메뉴를 선택해주세요.");
 						break;
 					}
 					
