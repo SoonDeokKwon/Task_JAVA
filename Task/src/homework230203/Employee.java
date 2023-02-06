@@ -1,32 +1,32 @@
 package homework230203;
 
 public class Employee {
-	//ÇÊµå
-		String name;
-		int salary;
-		public String getName() {
-			return name;
-		}
-		public int getSalary() {
-			return salary;
-		}
+	//í•„ë“œ
+	public String name;
+	public int salary;
 
 		
-		//»ı¼ºÀÚ
-		public Employee () {
+	//ìƒì„±ì
+	public Employee () {
 			
-		}
-		public Employee (String name, int salary) {
-			this.name =  name;
-			this.salary = salary;
-		}
+	}
+	public Employee (String name, int salary) {
+		this.name =  name;
+		this.salary = salary;
+	}
 		
-		//¸Ş¼Òµå
-		 public void getInformation() {
-			 System.out.println("ÀÌ¸§ : " + name + "¿¬ºÀ : " + salary);
-		 }
-		 
-		 public void print() {
-			 System.out.println("¼öÆÛÅ¬·¡½º");
-		 }
+	//ë©”ì†Œë“œ
+	public String getName() {
+		return name;
+	}
+		public int getSalary() {
+		return salary;
+	}
+		
+	public void getInformation() {
+		System.out.print("ì´ë¦„: " + name + "\tì—°ë´‰: " + salary + "\t");
+	}		 
+	public void print() {
+		System.out.println("ìˆ˜í¼í´ë˜ìŠ¤");
+	}
 }

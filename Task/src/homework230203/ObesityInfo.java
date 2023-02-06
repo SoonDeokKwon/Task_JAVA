@@ -1,26 +1,34 @@
 package homework230203;
 
 public class ObesityInfo extends StandardWeightInfo{
-	//ÇÊµå
+	//í•„ë“œ
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public ObesityInfo(String name, int height, int weight) {
 		super(name, height, weight);
 
 	}
 
-	//¸Ş¼Òµå
+	//ë©”ì†Œë“œ
 	public double getObesity() {
-		double result = (weight - super.getStandardWeight())/super.getStandardWeight()*100;
-		return result;
+		//ë¶€ëª¨ í´ë˜ìŠ¤ì— ì‡ëŠ” í‘œì¤€ ì²´ì¤‘ ë©”ì†Œë“œë¥¼ í™œìš©í•´ì„œ ë¹„ë§Œë„ ì—°ì‚°
+		double bmi = (weight - super.getStandardWeight())/super.getStandardWeight()*100;
+		return bmi;	
 	}
 
 	@Override
 	public void getInformation() {
-		if(getObesity() >= 20) {
-			System.out.println(name + "´ÔÀÇ ½ÅÀå" + height + " ,¸ö¹«°Ô" + weight + ", ºñ¸¸ÀÔ´Ï´Ù.");			
-		} else {
-			System.out.println(name + "´ÔÀÇ ½ÅÀå" + height + " ,¸ö¹«°Ô" + weight + ", Á¤»óÀÔ´Ï´Ù.");
+		//bmiì— ë”°ë¥¸ ë¹„ë§Œë„ë¥¼ ì•Œë ¤ì¤˜ì•¼ í•¨.
+		double bmi = getObesity();
+		String obesity = null;
+		
+		if(bmi <= 22.9) {
+			obesity = "ì €ì²´ì¤‘";
+		}else if(bmi <= 24.9) {
+			obesity = "ê³¼ì²´ì¤‘";
+		}else if(bmi > 25) {
+			obesity = "ë¹„ë§Œ";
 		}
+		System.out.println(name + "ë‹˜ì˜ ì‹ ì¥ " + height + " , ëª¸ë¬´ê²Œ " + weight + obesity + "ì…ë‹ˆë‹¤.");			
 	}
 }

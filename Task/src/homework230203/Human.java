@@ -1,15 +1,12 @@
 package homework230203;
 
 public class Human {
-	//ÇÊµå
-	String name;
-	int height;
-	int weight;
+	//í•„ë“œ
+	protected String name;
+	protected int height;
+	protected int weight;
 	
-	//»ı¼ºÀÚ
-	public Human () {
-		
-	}
+	//ìƒì„±ì
 	public Human(String name, int height, int weight) {
 		this.name = name;
 		this.height = height;
@@ -17,8 +14,8 @@ public class Human {
 	}
 	
 	
-	//¸Ş¼Òµå
+	//ë©”ì†Œë“œ
 	public void getInformation() {
-		System.out.println("ÀÌ¸§: " + name + " Å°: " + height + " ¸ö¹«°Ô: " + weight);
+		System.out.print(name + "ë‹˜ì˜ ì‹ ì¥ " + height + ", ëª¸ë¬´ê²Œ" + weight);
 	}
 }

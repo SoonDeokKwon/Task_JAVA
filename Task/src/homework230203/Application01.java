@@ -3,7 +3,7 @@ package homework230203;
 public class Application01 {
 	public static void main(String[] args) {
 		
-		EmpDept empDept = new EmpDept("ÀÌÁö³ª", 3000, "±³À°ºÎ");
+		EmpDept empDept = new EmpDept("ì´ì§€ë‚˜", 3000, "êµìœ¡ë¶€");
 		
 		empDept.getInformation();
 		empDept.print();

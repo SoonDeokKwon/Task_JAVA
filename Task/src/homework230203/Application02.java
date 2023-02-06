@@ -2,12 +2,13 @@ package homework230203;
 
 public class Application02 {
 	public static void main(String[] args) {
+		Human human = null;
 		
-		StandardWeightInfo hong = new StandardWeightInfo("È«±æµ¿", 165, 45);
-		hong.getInformation();
+		human = new StandardWeightInfo("í™ê¸¸ë™", 168, 45);
+		human.getInformation();
 		
-		ObesityInfo park = new ObesityInfo("¹Úµ¹ÀÌ", 168, 90);
-		park.getInformation();
+		human = new ObesityInfo("ë°•ë‘˜ì´", 168, 90);
+		human.getInformation();
 
 		
 	}

@@ -1,26 +1,33 @@
 package homework230203;
 
 public class EmpDept extends Employee{
-	//ÇÊµå
-	String departmentName;
+	//í•„ë“œ
+	public String departmentName;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public EmpDept () {
 		
 	}
 	public EmpDept (String name, int salary, String departmentName) {
-		this.name = name;
-		this.salary = salary;
+		//ë¶€ëª¨ ê°ì²´ ìƒì„±í•  ë•Œ ë¶€ì„œ ì´ë¦„ ì´ˆê¸°í™”
+		super(name, salary);
+		//ìì‹ ê°ì²´ ìƒì„±í•  ë•Œ ë¶€ì„œ ì´ë¦„ ì´ˆê¸°í™”
 		this.departmentName = departmentName;
 	}
 	
-	//¸Ş¼Òµå
+	//ë©”ì†Œë“œ
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	
 	@Override
 	public void getInformation() {
-		System.out.println("ÀÌ¸§:" + name + " ¿¬ºÀ:" + salary + " ºÎ¼­:" + departmentName);
+		super.getInformation();
+		System.out.println("ë¶€ì„œ: " + departmentName);
 	}
 	@Override
 	public void print() {
-		System.out.print("¼öÆÛÅ¬·¡½º" + "\n" + "¼­ºêÅ¬·¡½º");
+		super.print();
+		System.out.print("ì„œë¸Œí´ë˜ìŠ¤");
 	}
 }

@@ -1,21 +1,22 @@
 package homework230203;
 
 public class StandardWeightInfo extends Human {
-	//ÇÊµå
+	//í•„ë“œ
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public StandardWeightInfo (String name, int height, int weight) {
 		super(name, height, weight);
 	}
 	
-	//¸Ş¼Òµå
+	//ë©”ì†Œë“œ
 	public double getStandardWeight() {
-		double result = (height-100)*0.9;
+		double result = (double)(height-100)*0.9;
 		return result;
 	}
 
 	@Override
 	public void getInformation() {
-		System.out.println(name + "´ÔÀÇ ½ÅÀå" + height + ", ¸ö¹«°Ô" + weight + ", Ç¥ÁØÃ¼Áß " +getStandardWeight() + "ÀÔ´Ï´Ù.");
+		super.getInformation();
+		System.out.printf(", í‘œì¤€ì²´ì¤‘ %.1f ì…ë‹ˆë‹¤. \n", getStandardWeight());
 	}
 }
