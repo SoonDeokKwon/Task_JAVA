@@ -1,6 +1,7 @@
 package com.ksd.homework0207;
 
 import java.io.IOException;
+import java.util.Scanner;
 //import java.util.Scanner;
 
 public class Question02 {
@@ -23,10 +24,10 @@ public class Question02 {
 			keyCode = System.in.read(); 
 			int n = keyCode/10;
 			//0~9 : 48~57
-			if(n == 4 || n == 5) { 
+			if(keyCode>=48 && keyCode<=57) { 
 				a += 1;
 			//A~z : 65~122
-			}else if(n == 6 || n == 7 || n == 8 || n == 9 || n == 10 || n == 11 || n == 12) {
+			}else if((keyCode<=97 && keyCode>= 65) || (keyCode <= 122 && keyCode>= 65)) {
 				b += 1;
 			//공백 : 32
 			}else if(keyCode == 32 ) {
@@ -36,10 +37,24 @@ public class Question02 {
 				run = false;
 			}
 		}
- 
+		
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
 		System.out.println("숫자:" + a + "개, 문자:"+ b + "개, 공백:" + c);
 		
-		
+		//1a2b3c4d 5e
+		for (int i = 0; i < str.length(); i++) {
+			char tempStr = str.charAt(i);
+
+			if (tempStr == 32) {
+				c++;
+			} else if (tempStr >= 48 && tempStr <= 57) {
+				a++;
+			} else if (tempStr >= 97 && tempStr <= 122) {
+				b++;
+			}
+		}
+		System.out.println("숫자 : " + a + "개, 문자 : " + b + "개, 공백 : " + c);
 		
 		
 		

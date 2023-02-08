@@ -12,14 +12,24 @@ public class Question01 {
 		
 		
 		Scanner sc = new Scanner(System.in);
-		String wordMin = null;
-		//
-		for(int i=1; i<=3; i++) {
-			System.out.println("입력 > ");
-			String word = sc.nextLine();
-			wordMin = word;
-			if(word.length() > wordMin.length()) {
-				wordMin = word;
+		
+		System.out.println("입력1>");
+		String firstWord = sc.nextLine();
+		System.out.println("입력2>");
+		String secondeWord = sc.nextLine();
+		System.out.println("입력3>");
+		String thirdWord = sc.nextLine();
+		
+		String wordMin = firstWord + " : " + firstWord.length();
+		
+		if(firstWord.length() > secondeWord.length()) {
+			wordMin = secondeWord ; 
+			if(secondeWord.length() > thirdWord.length()) {
+				wordMin = thirdWord ;
+			}
+		}else {
+			if(firstWord.length() > thirdWord.length()) {
+				wordMin = thirdWord ;
 			}
 		}
 		System.out.println("가장 짧은 단어는 " + wordMin + "이며, 길이는 " + wordMin.length() + "입니다.");
